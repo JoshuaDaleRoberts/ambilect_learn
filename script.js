@@ -1,6 +1,8 @@
 import en from "english.js";
 const randInt = (n) => Math.floor(n * Math.random); 
 
+
+let enPhrase, kitPhrase;
 function newSentence(){
     const enSubjs = ["I","you","he","we","you all","they"];
     const kitSubjs = ["mu","nge","yandi","betu","benu","bau"];
@@ -8,6 +10,19 @@ function newSentence(){
     const kitVerbs = ['bikala','kota','katuka','tina','zaula','bikala','vwanda','zimbala','basika','kĭta','kwenda','kwiza','timuka','vutukisa','vutula'];
     let subjNum = randInt(enSubjs.length);
     let verbNum = randInt(enVerbs.length);
-    let enPhrase = `${enSubjs[subjNum]} ${en.v(enVerbs[verbNum], 0, subjNum)}`;
-    let kitPhrase = `${kitSubjs[subjNum]} ${kitVerbs[verbNum]}`;
+    enPhrase = `${enSubjs[subjNum]} ${en.v(enVerbs[verbNum], 0, subjNum)}`;
+    kitPhrase = `${kitSubjs[subjNum]} ${kitVerbs[verbNum]}`;
 }
+
+function runSentence(){
+    newSentence();
+    document.getElementById("kitPhrase").innerHTML = kitPhrase; 
+    document.getElementById("userAnswer").value = enPhrase; 
+}
+
+
+function test(){
+    document.getElementById("Test").innerHTML = "THIS IS HAPPENNING";
+}
+window.runSentence = runSentence; 
+window.test = test
