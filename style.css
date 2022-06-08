@@ -1,6 +1,8 @@
 #header {
     background-color: violet; 
     padding: 15px;
+    height: 40px;
+    
 }
 
 * {
@@ -25,5 +27,13 @@
 
 #userAnswer {
     width: 100%;
-    height: 30%;
+    height: 40px;
+}
+
+h1 {
+    float: left; 
+}
+
+h2 {
+    float: right;
 }
