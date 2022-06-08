@@ -198,5 +198,3 @@ export const en = {
      return final;
     }
 }
-
-console.log(en.pos("here"));
