@@ -4,9 +4,9 @@
   <title>Ambilect Learn</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="" />
+  <meta name="description"/>
 </head>
-<body onload="test()">
+<body onload="runSentence()">
   <div id="header">
       <h1>Ambilect</h1>
       <h2> Kituba </h2>
@@ -16,7 +16,7 @@
       <p id="kitPhrase">This is the sentence</p>
       <input type="text" id="userAnswer">
       <br>
-      <input type="button" value="Test" onclick="test()">
+      <input type="button" value="test" onclick="runSentence()">
       <input type="button" value="I give up!">
 
   </div>
@@ -25,10 +25,6 @@
       <p>See grammar</p>
       <p>See Vocab</p>
   </div>
-  <script src="script.js" type="module"></script>
-  <script src="english.js" type="module"></script>
-  <script type="text/javascript">
-    document.getElementById("test").innerHTML = "Hello"
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
