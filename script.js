@@ -1,8 +1,6 @@
 import { en } from "./english.js";
 
-function randInt(n) {
-    return (Math.floor(n * Math.random())); 
-}
+const randInt  = (n) => (Math.floor(n * Math.random()));
 
 
 window.enPhrase = "placeholder"
@@ -21,15 +19,36 @@ function newSentence(){
 
 function runSentence(){
     newSentence();
-    document.getElementById("kitPhrase").innerHTML = window.kitPhrase; 
-    document.getElementById("userAnswer").value = window.enPhrase; 
+    document.getElementById("kitPhrase").innerHTML = capitalize(window.kitPhrase); 
+    document.getElementById("userAnswer").value = capitalize(window.enPhrase); 
 }
 
 
 window.runSentence = runSentence; 
 
-function test(){
-    document.getElementById("test").innerHTML = randInt(10);
+function capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
+
+function checkLesson(){
+    let a = document.getElementById("userAnswer").value;
+    let b = window.kitPhrase;
+    if ( a == b) {
+        document.getElementById("blank").innerHTML = "You got it!"
+    } else {
+        document.getElementById("blank").innerHTML = "Try again!"
+    }
 }
 
-window.test = test; 
+
+function normalize(string) {
+    var result = string.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
+    return result
+  }
+
+
+
+
+
+window.runSentence = runSentence; 
