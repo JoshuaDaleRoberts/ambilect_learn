@@ -1,6 +1,9 @@
 import { en } from "./english.js";
 
 const randInt  = (n) => (Math.floor(n * Math.random()));
+const normalize = (a) => a.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
+const capitalize = (a) => a.charAt(0).toUpperCase() + a.slice(1);
+
 const answerSpace = document.getElementById("answer")
 
 
@@ -23,9 +26,7 @@ function runSentence(){
     document.getElementById("userAnswer").value = capitalize(window.kitPhrase); 
 }
 
-function capitalize(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-};
+
 
 
 function checkLesson(){
@@ -33,7 +34,7 @@ function checkLesson(){
     let b = window.kitPhrase;
     a = a.toLowerCase(); 
     b = b.toLowerCase();
-    if ( a == b) {
+    if (a == b) {
         answer.right()
     } else if (a != b && normalize(a) == normalize(b)) {
         answer.almost()
@@ -43,10 +44,7 @@ function checkLesson(){
 }
 
 
-function normalize(string) {
-    var result = string.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
-    return result
-}
+
 
 
 const answer = {
