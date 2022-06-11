@@ -1,9 +1,10 @@
 import { en } from "./english.js";
 
 const randInt  = (n) => (Math.floor(n * Math.random()));
+const answerSpace = document.getElementById("answer")
 
-window.enPhrase = "placeholder"
-window.kitPhrase = "placeholder"
+
+window.enPhrase = window.kitPhrase = ""
 function newSentence(){
     const enSubjs = ["I","you","he","we","you all","they"];
     const kitSubjs = ["mu","nge","yandi","betu","benu","bau"];
@@ -22,11 +23,9 @@ function runSentence(){
     document.getElementById("userAnswer").value = capitalize(window.kitPhrase); 
 }
 
-window.runSentence = runSentence; 
-
 function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
-  };
+};
 
 
 function checkLesson(){
@@ -34,14 +33,12 @@ function checkLesson(){
     let b = window.kitPhrase;
     a = a.toLowerCase(); 
     b = b.toLowerCase();
-    let answerSpace = document.getElementById("answer")
     if ( a == b) {
-        answerSpace.innerHTML = "You got it!"
+        answer.right()
+    } else if (a != b && normalize(a) == normalize(b)) {
+        answer.almost()
     } else {
-        answerSpace.innerHTML = `A: ${a} <br> B: ${b}`
-    }
-    if (a != b && normalize(a) == normalize(b)) {
-        answerSpace.innerHTML = "Check your accent marks and try again! "
+        answer.wrong();
     }
 }
 
@@ -51,29 +48,47 @@ function normalize(string) {
     return result
 }
 
-function trying(){
-   let answerSpace = document.getElementById("answer")
-   const node = document.createElement("p");
-   const textnode = document.createTextNode("Try again!");
-   node.appendChild(textnode);
-   answerSpace.style.backgroundColor = "red"
-   answerSpace.style.color = "white"
-   answerSpace.style.borderRadius = "5px"
-   answerSpace.style.padding = "20px"
-   document.getElementById("answer").appendChild(node);
-   const c = document.createElement("input");
-   const d = document.createTextNode("That's not quite right");
-   c.appendChild(d);
-   c.setAttribute("id", "newbutton");
-   document.getElementById("answer").appendChild(c);
-   let newButton = document.getElementById("newbutton");
-   newButton.type = "button"
-   newButton.value = "Try Again!"
 
-
+const answer = {
+    wrong: function(){
+    answerSpace.style.backgroundColor = "red"
+    answerSpace.style.color = "white"
+    answerSpace.style.borderRadius = "5px"
+    answerSpace.style.padding = "20px"
+    answerSpace.innerHTML = `
+        <p>That's not quite it!</p> 
+        <br> 
+        <input type='button' value='Try Again'>
+        <input type='button' value='Move on'>
+        `;
+    },
+    right: function(){
+        answerSpace.style.backgroundColor = "#4bb361"
+        answerSpace.style.color = "white"
+        answerSpace.style.borderRadius = "5px"
+        answerSpace.style.padding = "20px"
+        answerSpace.innerHTML = `
+        <p>Correct!</p> 
+        <br> 
+        <input type='button' value='New Sentence'>
+        `;
+    },
+    almost: function(){
+        answerSpace.style.backgroundColor = "#dbe617"
+        answerSpace.style.color = "black"
+        answerSpace.style.borderRadius = "5px"
+        answerSpace.style.padding = "20px"
+        answerSpace.innerHTML = `
+        <p>Check your accent marks and try again!</p> 
+        <br> 
+        <input type='button' value='Try Again'>
+        <input type='button' value='Move on'>
+        `;
+    }
 }
 
-window.document.body.onload = trying(); 
+
+window.document.body.onload = answer.almost(); 
 window.runSentence = runSentence; 
 window.checkLesson = checkLesson; 
 window.document.body.onload = runSentence(); 
