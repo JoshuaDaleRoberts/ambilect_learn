@@ -41,6 +41,7 @@ function checkLesson(){
     } else {
         answer.wrong();
     }
+    answer.clear(); 
 }
 
 
@@ -68,7 +69,7 @@ const answer = {
         answerSpace.innerHTML = `
         <p>Correct!</p> 
         <br> 
-        <input type='button' value='New Sentence'>
+        <input type='button' value='New Sentence' id = "newSentence">
         `;
     },
     almost: function(){
@@ -79,17 +80,21 @@ const answer = {
         answerSpace.innerHTML = `
         <p>Check your accent marks and try again!</p> 
         <br> 
-        <input type='button' value='Try Again'>
+        <input type='button' value='Try Again' id="aTA">
         <input type='button' value='Move on'>
         `;
+    },
+    clear: function(){
+        answerSpace.innerHTML = ""; 
+        answerSpace.style = "";
     }
 }
 
 
-window.document.body.onload = answer.almost(); 
+
 window.runSentence = runSentence; 
 window.checkLesson = checkLesson; 
 window.document.body.onload = runSentence(); 
 window.document.getElementById("done").addEventListener("click",window.checkLesson)
-window.document.getElementById("giveUp").addEventListener("click", window.runSentence)
-
+window.document.getElementById("giveUp").addEventListener("click", window.runSentence);
+window.document.getElementById("newSentence").addEventListener("click",window.runSentence);
