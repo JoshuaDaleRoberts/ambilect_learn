@@ -26,18 +26,15 @@ function runSentence(){
     document.getElementById("userAnswer").value = capitalize(window.kitPhrase); 
 }
 
-
-
-
 function checkLesson(){
     let a = document.getElementById("userAnswer").value;
     let b = window.kitPhrase;
     a = a.toLowerCase(); 
     b = b.toLowerCase();
     if (a == b) {
-        answer.right()
+        answer.right();
     } else if (a != b && normalize(a) == normalize(b)) {
-        answer.almost()
+        answer.almost();
     } else {
         answer.wrong();
     }
@@ -91,10 +88,10 @@ const answer = {
 }
 
 
-
 window.runSentence = runSentence; 
 window.checkLesson = checkLesson; 
 window.document.body.onload = runSentence(); 
-window.document.getElementById("done").addEventListener("click",window.checkLesson)
+window.document.body.onload = checkLesson(); 
+window.document.getElementById("done").addEventListener("click", window.checkLesson);
 window.document.getElementById("giveUp").addEventListener("click", window.runSentence);
 window.document.getElementById("newSentence").addEventListener("click",window.runSentence);
