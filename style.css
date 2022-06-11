@@ -37,3 +37,7 @@ h1 {
 h2 {
     float: right;
 }
+
+#answer {
+    margin: 0px;
+}

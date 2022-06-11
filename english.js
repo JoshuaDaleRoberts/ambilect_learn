@@ -46,7 +46,8 @@ export const en = {
           ((vowels.indexOf(lastLetter) == -1) && 
           ((vowels.indexOf(secondLast) > -1) || secondLast == "e" )) && 
           lastLetter !== "y" &&
-         (vowels.indexOf(thirdLast) == -1 && thirdLast != "e") ;
+         (vowels.indexOf(thirdLast) == -1 && thirdLast != "e") &&
+         verb.length >= 2;
       
       let irreg = (irregularVerbs.indexOf(verb) > -1)
     

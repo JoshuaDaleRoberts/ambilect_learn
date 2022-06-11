@@ -3,25 +3,27 @@
 <head>
   <title>Ambilect Learn</title>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width" />
   <meta name="description"/>
 </head>
-<body onload="runSentence()">
+<body>
   <div id="header">
       <h1>Ambilect</h1>
       <h2> Kituba </h2>
   </div>
   <div id="main">
-      <p id="test">Translate this sentence to English!</p>
+      <p id = "forTesting">Translate this sentence to English!</p>
       <p id="kitPhrase">This is the sentence</p>
       <input type="text" id="userAnswer">
       <br>
-      <input type="button" value="test" onclick="runSentence()">
-      <input type="button" value="I give up!">
+      <input type="button" value="Done" id="done">
+      <input type="button" value="I give up!" id="giveUp">
       <br> 
-      <p id="blank"></p>
 
   </div>
+  <div id="answer">
+  </div>
+  <br>
   <div id="footer">
       <p>Report sentence</p>
       <p>See grammar</p>
