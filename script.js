@@ -30,14 +30,15 @@ function checkLesson(){
     let b = window.kitPhrase;
     a = a.toLowerCase(); 
     b = b.toLowerCase();
+    console.log(a); 
+    console.log(b); 
     if (a == b) {
         answer.right();
     } else if (a != b && normalize(a) == normalize(b)) {
         answer.almost();
     } else {
         answer.wrong();
-    }
-    answer.clear(); 
+    } 
 }
 
 
@@ -65,8 +66,9 @@ const answer = {
         answerSpace.innerHTML = `
         <p>Correct!</p> 
         <br> 
-        <input type='button' value='New Sentence' id = "newSentence">
+        <input type='button' value='New Sentence' id="new">
         `;
+        window.document.getElementById("new").addEventListener("click",newSentence());
     },
     almost: function(){
         answerSpace.style.backgroundColor = "#dbe617"
@@ -87,10 +89,13 @@ const answer = {
 }
 
 
+
+
+
+
 window.runSentence = runSentence; 
 window.checkLesson = checkLesson; 
 window.document.body.onload = runSentence(); 
-window.document.body.onload = checkLesson(); 
 window.document.getElementById("done").addEventListener("click", window.checkLesson);
 window.document.getElementById("giveUp").addEventListener("click", window.runSentence);
 window.document.getElementById("newSentence").addEventListener("click",window.runSentence);
