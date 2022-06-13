@@ -17,7 +17,6 @@ function newSentence(){
     let verbNum = randInt(enVerbs.length);
     window.enPhrase = `${enSubjs[subjNum]} ${en.v(enVerbs[verbNum], 0, subjNum)}`;
     window.kitPhrase = `${kitSubjs[subjNum]} ${kitVerbs[verbNum]}`;
-    console.log(enPhrase);
 }
 
 function runSentence(){
