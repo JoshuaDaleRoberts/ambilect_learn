@@ -19,6 +19,9 @@
     background-color: purple;
     color: white;
     padding: 30px; 
+    position: absolute; 
+    bottom: 0;
+    width: 100%;
 }
 
 #footer p {
@@ -40,4 +43,12 @@ h2 {
 
 #answer {
     margin: 0px;
+}
+
+p {
+  font-size: 30px; 
+}
+
+#userAnswer {
+  font-size: 30px; 
 }
