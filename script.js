@@ -6,7 +6,6 @@ const capitalize = (a) => a.charAt(0).toUpperCase() + a.slice(1);
 
 const answerSpace = document.getElementById("answer")
 
-
 window.enPhrase = window.kitPhrase = ""
 function newSentence(){
     const enSubjs = ["I","you","he","we","you all","they"];
@@ -30,57 +29,54 @@ function checkLesson(){
     let b = window.kitPhrase;
     a = a.toLowerCase(); 
     b = b.toLowerCase();
-    console.log(a); 
-    console.log(b); 
     if (a == b) {
         answer.right();
-    } else if (a != b && normalize(a) == normalize(b)) {
+    } else if (normalize(a) == normalize(b)) {
         answer.almost();
     } else {
         answer.wrong();
     } 
 }
 
-
-
-
-
 const answer = {
     wrong: function(){
-    answerSpace.style.backgroundColor = "red"
-    answerSpace.style.color = "white"
-    answerSpace.style.borderRadius = "5px"
-    answerSpace.style.padding = "20px"
-    answerSpace.innerHTML = `
-        <p>That's not quite it!</p> 
-        <br> 
-        <input type='button' value='Try Again'>
-        <input type='button' value='Move on'>
-        `;
+      // answerSpace.style.backgroundColor = "red"
+      // answerSpace.style.color = "white"
+      // answerSpace.style.borderRadius = "5px"
+      // answerSpace.style.padding = "20px"
+      // answerSpace.innerHTML = `
+      //   <p>That's not quite it!</p> 
+      //   <br> 
+      //   <input type='button' value='Try Again'>
+      //   <input type='button' value='Move on'>
+      //   `;
+      document.getElementById("wrong").style.display = "block"
     },
     right: function(){
-        answerSpace.style.backgroundColor = "#4bb361"
-        answerSpace.style.color = "white"
-        answerSpace.style.borderRadius = "5px"
-        answerSpace.style.padding = "20px"
-        answerSpace.innerHTML = `
-        <p>Correct!</p> 
-        <br> 
-        <input type='button' value='New Sentence' id="new">
-        `;
-        window.document.getElementById("new").addEventListener("click",newSentence());
+        // answerSpace.style.backgroundColor = "#4bb361"
+        // answerSpace.style.color = "white"
+        // answerSpace.style.borderRadius = "5px"
+        // answerSpace.style.padding = "20px"
+        // answerSpace.innerHTML = `
+        // <p>Correct!</p> 
+        // <br> 
+        // <input type='button' value='New Sentence' id="new">
+        // `;
+        document.getElementById("right").style.display = "block"
     },
     almost: function(){
-        answerSpace.style.backgroundColor = "#dbe617"
-        answerSpace.style.color = "black"
-        answerSpace.style.borderRadius = "5px"
-        answerSpace.style.padding = "20px"
-        answerSpace.innerHTML = `
-        <p>Check your accent marks and try again!</p> 
-        <br> 
-        <input type='button' value='Try Again' id="aTA">
-        <input type='button' value='Move on'>
-        `;
+        // answerSpace.style.backgroundColor = "#dbe617"
+        // answerSpace.style.color = "black"
+        // answerSpace.style.borderRadius = "5px"
+        // answerSpace.style.padding = "20px"
+        // answerSpace.innerHTML = `
+        // <p>Check your accent marks and try again!</p> 
+        // <br> 
+        // <input type='button' value='Try Again' id="aTA">
+        // <input type='button' value='Move on'>
+        // `;
+        document.getElementById("almost").style.display = "block"
+
     },
     clear: function(){
         answerSpace.innerHTML = ""; 
@@ -99,3 +95,9 @@ window.document.body.onload = runSentence();
 window.document.getElementById("done").addEventListener("click", window.checkLesson);
 window.document.getElementById("giveUp").addEventListener("click", window.runSentence);
 window.document.getElementById("newSentence").addEventListener("click",window.runSentence);
+
+function testing(){
+  document.getElementById("forTesting").style.backgroundColor = "red;"
+}
+
+window.document.body.onload = testing(); 

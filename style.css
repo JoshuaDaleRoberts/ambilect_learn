@@ -26,6 +26,7 @@
 
 #footer p {
     text-decoration: underline;
+    font-size: 15px; 
 }
 
 #userAnswer {
@@ -51,4 +52,21 @@ p {
 
 #userAnswer {
   font-size: 30px; 
+}
+
+#wrong {
+  background-color: red; 
+}
+
+#almost {
+  background-color: #dbe617;
+}
+
+#correct {
+  background-color: #4bb361;
+}
+
+.answer {
+  padding: 15px; 
+  display: none; 
 }
