@@ -89,15 +89,16 @@ const answer = {
 
 
 
+function testing(){
+  document.getElementById("forTesting").style.display = "none"; 
+}
+
+window.testing = testing;
+
 window.runSentence = runSentence; 
 window.checkLesson = checkLesson; 
 window.document.body.onload = runSentence(); 
 window.document.getElementById("done").addEventListener("click", window.checkLesson);
 window.document.getElementById("giveUp").addEventListener("click", window.runSentence);
 window.document.getElementById("newSentence").addEventListener("click",window.runSentence);
-
-function testing(){
-  document.getElementById("forTesting").style.backgroundColor = "red;"
-}
-
-window.document.body.onload = testing(); 
+window.document.getElementById("what").onclick = window.testing; 
