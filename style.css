@@ -69,9 +69,35 @@ p {
 .answer {
   padding: 15px; 
   display: none;
+  margin: 5%;
+  border-radius: 10px;
+}
+
+
+.bottomButton, .eL {
+  background-color: white;
+  border: 2px solid black;
+  height: 30px; 
+  border-radius: 5px; 
+
 }
 
 .eL {
-  background-color: white;
   
+  width: 30px; 
+  height: 30px; 
+  border-radius: 5px; 
+}
+
+.bottomButton {
+
+}
+
+.eL:hover {
+  background-color: lightgray;
+}
+
+#controls {
+  border: 2px solid blue;
+  width: 30%
 }
