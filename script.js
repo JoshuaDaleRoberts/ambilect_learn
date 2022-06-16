@@ -19,48 +19,49 @@ function newSentence(){
 }
 
 function runSentence(){
+    answer.clear(); 
     newSentence();
-    document.getElementById("kitPhrase").innerHTML = capitalize(window.enPhrase); 
+    document.getElementById("enPhrase").innerHTML = capitalize(window.enPhrase); 
     document.getElementById("userAnswer").value = capitalize(window.kitPhrase); 
 }
 
 function checkLesson(){
-    let a = document.getElementById("userAnswer").value;
-    let b = window.kitPhrase;
+    let a = document.getElementById("userAnswer").value; 
+    let b = window.kitPhrase; 
     a = a.toLowerCase(); 
-    b = b.toLowerCase();
     if (a == b) {
-        answer.right();
+        answer.correct(); 
     } else if (normalize(a) == normalize(b)) {
-        answer.almost();
+        answer.almost(); 
     } else {
-        answer.wrong();
-    } 
+        answer.wrong(); 
+    }
 }
 
 const answer = {
     wrong: function(){
-      document.getElementById("wrong").style.display = "block"
+        document.getElementById("wrong").style.display = "block";
     },
-    right: function(){
-        document.getElementById("right").style.display = "block"
+    correct: function(){
+        document.getElementById("correct").style.display = "block";
     },
     almost: function(){
-        document.getElementById("almost").style.display = "block"
+        document.getElementById("almost").style.display = "block";
 
     },
     clear: function(){
-        answerSpace.innerHTML = ""; 
-        answerSpace.style = "";
+        document.getElementById("wrong").style.display = "none";
+        document.getElementById("correct").style.display = "none";
+        document.getElementById("almost").style.display = "none";
     }
 }
+
+
 window.answer = answer;
 window.runSentence = runSentence; 
 window.checkLesson = checkLesson; 
-window.document.body.onload = runSentence(); 
-window.document.getElementById("done").addEventListener("click", window.checkLesson);
-window.document.getElementById("giveUp").addEventListener("click", window.runSentence);
-window.document.getElementById("newSentence").addEventListener("click",window.runSentence);
-window.document.getElementById("what").onclick = window.testing; 
 
-window.document.body.onload = window.answer.wrong()
+window.document.getElementById("giveUp").onclick = window.runSentence
+window.document.getElementById("done").onclick = checkLesson; 
+window.document.body.onload = runSentence(); 
+
