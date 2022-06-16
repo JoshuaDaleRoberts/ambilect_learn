@@ -40,41 +40,12 @@ function checkLesson(){
 
 const answer = {
     wrong: function(){
-      // answerSpace.style.backgroundColor = "red"
-      // answerSpace.style.color = "white"
-      // answerSpace.style.borderRadius = "5px"
-      // answerSpace.style.padding = "20px"
-      // answerSpace.innerHTML = `
-      //   <p>That's not quite it!</p> 
-      //   <br> 
-      //   <input type='button' value='Try Again'>
-      //   <input type='button' value='Move on'>
-      //   `;
       document.getElementById("wrong").style.display = "block"
     },
     right: function(){
-        // answerSpace.style.backgroundColor = "#4bb361"
-        // answerSpace.style.color = "white"
-        // answerSpace.style.borderRadius = "5px"
-        // answerSpace.style.padding = "20px"
-        // answerSpace.innerHTML = `
-        // <p>Correct!</p> 
-        // <br> 
-        // <input type='button' value='New Sentence' id="new">
-        // `;
         document.getElementById("right").style.display = "block"
     },
     almost: function(){
-        // answerSpace.style.backgroundColor = "#dbe617"
-        // answerSpace.style.color = "black"
-        // answerSpace.style.borderRadius = "5px"
-        // answerSpace.style.padding = "20px"
-        // answerSpace.innerHTML = `
-        // <p>Check your accent marks and try again!</p> 
-        // <br> 
-        // <input type='button' value='Try Again' id="aTA">
-        // <input type='button' value='Move on'>
-        // `;
         document.getElementById("almost").style.display = "block"
 
     },
@@ -83,18 +54,7 @@ const answer = {
         answerSpace.style = "";
     }
 }
-
-
-
-
-
-
-function testing(){
-  document.getElementById("forTesting").style.display = "none"; 
-}
-
-window.testing = testing;
-
+window.answer = answer;
 window.runSentence = runSentence; 
 window.checkLesson = checkLesson; 
 window.document.body.onload = runSentence(); 
@@ -102,3 +62,5 @@ window.document.getElementById("done").addEventListener("click", window.checkLes
 window.document.getElementById("giveUp").addEventListener("click", window.runSentence);
 window.document.getElementById("newSentence").addEventListener("click",window.runSentence);
 window.document.getElementById("what").onclick = window.testing; 
+
+window.document.body.onload = window.answer.wrong()
