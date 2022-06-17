@@ -63,6 +63,9 @@ window.checkLesson = checkLesson;
 
 window.document.getElementById("giveUp").onclick = window.runSentence
 window.document.getElementById("done").onclick = checkLesson; 
+window.document.getElementById("aCaron").onclick = add.aCaron(); 
+
+
 window.document.body.onload = runSentence(); 
 window.document.body.onload = answer.wrong(); 
 

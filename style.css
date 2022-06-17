@@ -10,7 +10,6 @@
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-
 #main {
   padding: 20px; 
 }
@@ -30,8 +29,8 @@
 }
 
 #userAnswer {
-    width: 100%;
-    height: 40px;
+  width: 100%;
+  height: 40px;
 }
 
 h1 {
@@ -83,20 +82,27 @@ p {
 }
 
 .eL {
-  width: 30px; 
+  width: 100%; 
   height: 30px; 
-  border-radius: 5px; 
+  border-radius: 5px;
+  margin: 5px; 
+
 }
 
 .bottomButton {
-  width: 30%; 
+  width: 100%;  
+  margin: 5px;
 }
 
-.eL:hover {
+.eL:hover, .bottomButton:hover {
   background-color: lightgray;
 }
 
 #controls {
-  border: 2px solid blue;
-  width: 50%; 
+  width: 30%
+}
+
+.evenSpace {
+  display: flex;
+  justify-content: space-around;
 }
