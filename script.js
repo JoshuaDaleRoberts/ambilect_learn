@@ -5,8 +5,8 @@ const normalize = (a) => a.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
 const capitalize = (a) => a.charAt(0).toUpperCase() + a.slice(1);
 
 const answerSpace = document.getElementById("answer")
-
 window.enPhrase = window.kitPhrase = ""
+
 function newSentence(){
     const enSubjs = ["I","you","he","we","you all","they"];
     const kitSubjs = ["mu","nge","yandi","betu","benu","bau"];
@@ -64,6 +64,5 @@ window.checkLesson = checkLesson;
 window.document.getElementById("giveUp").onclick = window.runSentence
 window.document.getElementById("done").onclick = checkLesson; 
 window.document.body.onload = runSentence(); 
-
 window.document.body.onload = answer.wrong(); 
 

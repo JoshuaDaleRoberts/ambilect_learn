@@ -1,32 +1,32 @@
 #header {
-    background-color: violet; 
-    padding: 15px;
-    height: 40px;
+  background-color: violet; 
+  padding: 15px;
+  height: 40px;
     
 }
 
 * {
-    margin: 0;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 0;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 
 #main {
-    padding: 20px; 
+  padding: 20px; 
 }
 
 #footer {
-    background-color: purple;
-    color: white;
-    padding: 30px; 
-    position: absolute; 
-    bottom: 0;
-    width: 100%;
+  background-color: purple;
+  color: white;
+  padding: 30px; 
+  position: absolute; 
+  bottom: 0;
+  width: 100%;
 }
 
 #footer p {
-    text-decoration: underline;
-    font-size: 15px; 
+  text-decoration: underline;
+  font-size: 15px; 
 }
 
 #userAnswer {
@@ -35,15 +35,15 @@
 }
 
 h1 {
-    float: left; 
+  float: left; 
 }
 
 h2 {
-    float: right;
+  float: right;
 }
 
 #answer {
-    margin: 0px;
+  margin: 0px;
 }
 
 p {
@@ -83,14 +83,13 @@ p {
 }
 
 .eL {
-  
   width: 30px; 
   height: 30px; 
   border-radius: 5px; 
 }
 
 .bottomButton {
-
+  width: 30%; 
 }
 
 .eL:hover {
@@ -99,5 +98,5 @@ p {
 
 #controls {
   border: 2px solid blue;
-  width: 30%
+  width: 50%; 
 }
