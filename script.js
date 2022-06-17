@@ -40,14 +40,16 @@ function checkLesson(){
 
 const answer = {
     wrong: function(){
+        this.clear()
         document.getElementById("wrong").style.display = "block";
     },
     correct: function(){
+        this.clear()
         document.getElementById("correct").style.display = "block";
     },
     almost: function(){
+        this.clear()
         document.getElementById("almost").style.display = "block";
-
     },
     clear: function(){
         document.getElementById("wrong").style.display = "none";
@@ -57,13 +59,54 @@ const answer = {
 }
 
 
+const add = {
+    aCaron: function(){
+        let a = document.getElementById("userAnswer").value;
+        a += "ă";
+        document.getElementById("userAnswer").value = a; 
+    }, 
+    aAcute: function(){
+        let a = document.getElementById("userAnswer").value;
+        a += "á";
+        document.getElementById("userAnswer").value = a; 
+    },
+    eCaron: function(){
+        let a = document.getElementById("userAnswer").value;
+        a += "ĕ";
+        document.getElementById("userAnswer").value = a; 
+    },
+    eAcute: function(){
+        let a = document.getElementById("userAnswer").value;
+        a += "é";
+        document.getElementById("userAnswer").value = a; 
+    },
+    iAcute: function(){
+        let a = document.getElementById("userAnswer").value;
+        a += "í";
+        document.getElementById("userAnswer").value = a; 
+    },
+    oAcute: function(){
+        let a = document.getElementById("userAnswer").value;
+        a += "ó";
+        document.getElementById("userAnswer").value = a; 
+    }
+
+}
+
+
 window.answer = answer;
 window.runSentence = runSentence; 
 window.checkLesson = checkLesson; 
 
 window.document.getElementById("giveUp").onclick = window.runSentence
 window.document.getElementById("done").onclick = checkLesson; 
-window.document.getElementById("aCaron").onclick = add.aCaron(); 
+
+window.document.getElementById("aCaron").onclick = add.aCaron; 
+window.document.getElementById("aAcute").onclick = add.aAcute; 
+window.document.getElementById("eCaron").onclick = add.eCaron; 
+window.document.getElementById("eAcute").onclick = add.eAcute; 
+window.document.getElementById("iAcute").onclick = add.iAcute; 
+window.document.getElementById("oAcute").onclick = add.oAcute; 
 
 
 window.document.body.onload = runSentence(); 
