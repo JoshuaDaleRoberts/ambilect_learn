@@ -59,40 +59,6 @@ const answer = {
 }
 
 
-const add = {
-    aCaron: function(){
-        let a = document.getElementById("userAnswer").value;
-        a += "ă";
-        document.getElementById("userAnswer").value = a; 
-    }, 
-    aAcute: function(){
-        let a = document.getElementById("userAnswer").value;
-        a += "á";
-        document.getElementById("userAnswer").value = a; 
-    },
-    eCaron: function(){
-        let a = document.getElementById("userAnswer").value;
-        a += "ĕ";
-        document.getElementById("userAnswer").value = a; 
-    },
-    eAcute: function(){
-        let a = document.getElementById("userAnswer").value;
-        a += "é";
-        document.getElementById("userAnswer").value = a; 
-    },
-    iAcute: function(){
-        let a = document.getElementById("userAnswer").value;
-        a += "í";
-        document.getElementById("userAnswer").value = a; 
-    },
-    oAcute: function(){
-        let a = document.getElementById("userAnswer").value;
-        a += "ó";
-        document.getElementById("userAnswer").value = a; 
-    }
-
-}
-
 
 window.answer = answer;
 window.runSentence = runSentence; 
