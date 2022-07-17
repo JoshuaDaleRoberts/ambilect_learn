@@ -148,10 +148,11 @@ export const en = {
             finalVerb = aux + " " + irregPP[irregularVerbs.indexOf(verb)];
           }
         }
-      
+        if (verb == "go" && subj == 2) {
+          finalVerb = "goes" 
+        }
         finalVerb = finalVerb + objMark
         return finalVerb
-    
     },
     p: function(noun) {
       const irregnoun = ['aircraft','analysis','antithesis','appendix','axis','bacterium','basis','bison','cactus','child','codex','crisis','criterion','datum','diagnosis','die','ellipsis','faux pas','fish','focus','foot','formula','fungus','goose','index','larva','locus','louse','man','matrix','medium','moose','mouse','nebula','nucleus','oasis','offspring','ox','parenthesis','phenomenon','quiz','radius','referendum','series','sheep','shrimp','species','stimulus','stratum','swine','syllabus','synopsis','thesis','tooth','tuna','vertex','woman',]

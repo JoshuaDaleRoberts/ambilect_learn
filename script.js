@@ -1,33 +1,32 @@
 import { en } from "./english.js";
-
+var correctAudio = new Audio('correct.mp3');
+var wrongAudio = new Audio('wrong.mp3')
 const randInt  = (n) => (Math.floor(n * Math.random()));
 const normalize = (a) => a.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
 const capitalize = (a) => a.charAt(0).toUpperCase() + a.slice(1);
 
 const answerSpace = document.getElementById("answer")
-window.enPhrase = window.kitPhrase = ""
+window.enPhrase = window.tlPhrase = ""
 
 function newSentence(){
-    const enSubjs = ["I","you","he","we","you all","they"];
-    const kitSubjs = ["mu","nge","yandi","betu","benu","bau"];
-    const enVerbs = ['leave','enter','depart','escape','run away','remain','stay','get lost','go out','go down','go','come','fly','come back','return']
-    const kitVerbs = ['bikala','kota','katuka','tina','zaula','bikala','vwanda','zimbala','basika','kĭta','kwenda','kwiza','timuka','vutukisa','vutula'];
-    let subjNum = randInt(enSubjs.length);
-    let verbNum = randInt(enVerbs.length);
-    window.enPhrase = `${enSubjs[subjNum]} ${en.v(enVerbs[verbNum], 0, subjNum)}`;
-    window.kitPhrase = `${kitSubjs[subjNum]} ${kitVerbs[verbNum]}`;
+    const en1 = ['good morning', 'good day', 'good afternoon', 'good evening', 'hello', 'goodbye', 'thank you'];
+    const tl1 = ['magandang umaga', 'magandang tanghali', 'magandang hapon', 'magandang gabi', 'kamusta', 'paalam', 'salamat']; 
+    let a = randInt(en1.length);
+    window.enPhrase = en1[a]; 
+    window.tlPhrase = tl1[a]; 
 }
 
 function runSentence(){
     answer.clear(); 
     newSentence();
     document.getElementById("enPhrase").innerHTML = capitalize(window.enPhrase); 
-    document.getElementById("userAnswer").value = capitalize(window.kitPhrase); 
+    document.getElementById("userAnswer").value = ""
+    document.getElementById("userAnswer").value = capitalize(window.tlPhrase); 
 }
 
 function checkLesson(){
     let a = document.getElementById("userAnswer").value; 
-    let b = window.kitPhrase; 
+    let b = window.tlPhrase; 
     a = a.toLowerCase(); 
     if (a == b) {
         answer.correct(); 
@@ -42,10 +41,12 @@ const answer = {
     wrong: function(){
         this.clear()
         document.getElementById("wrong").style.display = "block";
+        wrongAudio.play(); 
     },
     correct: function(){
         this.clear()
         document.getElementById("correct").style.display = "block";
+        correctAudio.play();
     },
     almost: function(){
         this.clear()
@@ -67,14 +68,5 @@ window.checkLesson = checkLesson;
 window.document.getElementById("giveUp").onclick = window.runSentence
 window.document.getElementById("done").onclick = checkLesson; 
 
-window.document.getElementById("aCaron").onclick = add.aCaron; 
-window.document.getElementById("aAcute").onclick = add.aAcute; 
-window.document.getElementById("eCaron").onclick = add.eCaron; 
-window.document.getElementById("eAcute").onclick = add.eAcute; 
-window.document.getElementById("iAcute").onclick = add.iAcute; 
-window.document.getElementById("oAcute").onclick = add.oAcute; 
-
-
-window.document.body.onload = runSentence(); 
-window.document.body.onload = answer.wrong(); 
+window.document.body.onload = window.runSentence(); 
 
