@@ -28,11 +28,6 @@
   font-size: 15px; 
 }
 
-#userAnswer {
-  width: 100%;
-  height: 40px;
-}
-
 h1 {
   float: left; 
 }
@@ -52,4 +47,17 @@ p {
 .evenSpace {
   display: flex;
   justify-content: space-around;
+}
+
+table {
+  width: 100%; 
+  height: 80%; 
+}
+
+td {
+  height: 10vw; 
+  font-size: 5vw;
+  border: 6px solid pink; 
+  border-radius: 30px;
+  text-align: center;
 }
