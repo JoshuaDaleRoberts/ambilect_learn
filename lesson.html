@@ -17,8 +17,8 @@
   <div id="main">
     <p id = "forTesting">Translate this sentence to Tagalog!</p>
     <p id="enPhrase">This is the sentence</p>
-    <form>
-      <input type="text" id="userAnswer" title ="su">
+    <div>
+      <input type="text" id="userAnswer" title ="Answer here">
       <br>
       <div id="controls">
         <div class="evenSpace">
@@ -26,7 +26,7 @@
           <input type="button" value="I give up!" id="giveUp" class="bottomButton">
         </div>
       </div>
-    </form>
+    </div>
     <br> 
 
   </div>
@@ -34,20 +34,20 @@
     <div id="wrong" class="answer">
         <p>That's not quite it!</p> 
         <br> 
-        <input type='button' value='Try Again'>
-        <input type='button' value='Reveal Answer'>
-        <input type="button" value="Move on">
+        <input type='button' value='Try Again' class="answerButton">
+        <input type='button' value='Reveal Answer' class="answerButton">
+        <input type="button" value="Move on" class="answerButton">
       </div>
       <div id = "correct" class="answer">
         <p>Correct!</p> 
         <br> 
-        <input type='button' value='New Sentence' id="new">
+        <input type='button' value='New Sentence' id="new" class="answerButton">
       </div>
       <div id="almost" class="answer">
         <p>Check your accent marks and try again!</p> 
         <br> 
-        <input type='button' value='Try Again' id="aTA">
-        <input type='button' value='Move on'>
+        <input type='button' value='Try Again' id="aTA" class="answerButton">
+        <input type='button' value='Move on' class="answerButton">
       </div>
   </div>
   
@@ -56,6 +56,7 @@
       <p>Report sentence</p>
       <p>See grammar</p>
       <p>See Vocab</p>
+      <p>How do accent marks work?</p>
   </div>
   <script src="script.js" type="module"></script>
 </body>
