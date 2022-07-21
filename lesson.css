@@ -1,35 +1,11 @@
-#header {
-  background-color: violet; 
-  padding: 15px;
-  height: 40px;
-    
-}
-
 * {
   margin: 0;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-#main {
-  padding: 20px; 
-}
-
-#footer {
-  background-color: purple;
-  color: white;
-  padding: 30px; 
-  position: absolute; 
-  bottom: 0;
-  width: 100%;
-}
-
-#footer p {
-  text-decoration: underline;
-  font-size: 15px; 
-}
-
-#userAnswer {
-  width: 100%;
+#header {
+  background-color: violet; 
+  padding: 15px;
   height: 40px;
 }
 
@@ -41,8 +17,8 @@ h2 {
   float: right;
 }
 
-#answer {
-  margin: 0px;
+#main {
+  padding: 20px; 
 }
 
 p {
@@ -50,19 +26,16 @@ p {
 }
 
 #userAnswer {
+  width: 100%;
+  height: 40px;
+}
+
+#answer {
+  margin: 0px;
+}
+
+#userAnswer {
   font-size: 30px; 
-}
-
-#wrong {
-  background-color: red; 
-}
-
-#almost {
-  background-color: #dbe617;
-}
-
-#correct {
-  background-color: #4bb361;
 }
 
 .answer {
@@ -72,21 +45,9 @@ p {
   border-radius: 10px;
 }
 
-
-.bottomButton, .eL {
-  background-color: white;
-  border: 2px solid black;
-  height: 30px; 
-  border-radius: 5px; 
-
-}
-
-.eL {
-  width: 100%; 
-  height: 30px; 
-  border-radius: 5px;
-  margin: 5px; 
-
+.evenSpace {
+  display: flex;
+  justify-content: space-around;
 }
 
 .bottomButton {
@@ -102,7 +63,28 @@ p {
   width: 30%
 }
 
-.evenSpace {
-  display: flex;
-  justify-content: space-around;
+#wrong {
+  background-color: red; 
+}
+
+#correct {
+  background-color: #4bb361;
+}
+
+#almost {
+  background-color: #dbe617;
+}
+
+#footer {
+  background-color: purple;
+  color: white;
+  padding: 30px; 
+  position: absolute; 
+  bottom: 0;
+  width: 100%;
+}
+
+#footer p {
+  text-decoration: underline;
+  font-size: 15px; 
 }

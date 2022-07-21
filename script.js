@@ -42,7 +42,7 @@ const answer = {
     correct: function(){
         this.clear();
         document.getElementById("correct").style.display = "block";
-        correctAudio.play();
+        //correctAudio.play();
     },
     almost: function(){
         this.clear()
@@ -75,3 +75,4 @@ window.checkLesson = checkLesson;
 window.document.getElementById("giveUp").onclick = window.runSentence
 window.document.getElementById("done").onclick = checkLesson; 
 window.document.body.onload = window.runSentence(); 
+window.document.body.onload = answer.correct(); 
