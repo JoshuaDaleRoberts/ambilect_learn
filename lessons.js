@@ -1,3 +1,6 @@
+
+const randInt  = (n) => (Math.floor(n * Math.random()));
+
 export function lessonOne(){
   const en1 = ['good morning', 'good day', 'good afternoon', 'good evening', 'hello', 'goodbye', 'thank you'];
   const tl1 = ['magandang umaga', 'magandang tanghali', 'magandang hapon', 'magandang gabi', 'kamusta', 'paalam', 'salamat']; 

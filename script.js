@@ -1,20 +1,21 @@
 import { en } from "./english.js";
-import { lessonOne, lessonTwo } from "./lessons.js";
+import { lessonOne } from "./lessons.js";
+import { lessonTwo } from "./lessons.js";
 
 var correctAudio = new Audio('correct.mp3');
-var wrongAudio = new Audio('wrong.mp3')
-const randInt  = (n) => (Math.floor(n * Math.random()));
+var wrongAudio = new Audio('wrong.mp3');
+
 const normalize = (a) => a.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
 const capitalize = (a) => a.charAt(0).toUpperCase() + a.slice(1);
 
-let newSentence = lessonOne; 
+window.newSentence = lessonOne; 
 
 const answerSpace = document.getElementById("answer")
 window.enPhrase = window.tlPhrase = ""
 
 function runSentence(){
     answer.clear(); 
-    newSentence(); 
+    window.newSentence(); 
     document.getElementById("enPhrase").innerHTML = capitalize(window.enPhrase); 
     document.getElementById("userAnswer").value = ""
     document.getElementById("userAnswer").value = capitalize(window.tlPhrase); 
@@ -68,11 +69,11 @@ function tokenCheck(){
     const lessonQuery = new URLSearchParams(window.location.search);
     let lessonNumber = lessonQuery.get("lesson"); 
     switch(lessonNumber) {
-        case "1": newSentence = lessonOne;
+        case "1": window.newSentence = lessonOne;
         break;
-        case "2": newSentence = lessonTwo;
+        case "2": window.newSentence = lessonTwo;
         break;
-        default: newSentence = lessonOne
+        default: window.newSentence = lessonOne
     } 
     runSentence(); 
 }
