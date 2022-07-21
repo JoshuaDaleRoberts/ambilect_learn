@@ -53,12 +53,12 @@ function checkLesson(){
 
 const answer = {
     wrong: function(){
-        this.clear()
+        this.clear();
         document.getElementById("wrong").style.display = "block";
         wrongAudio.play(); 
     },
     correct: function(){
-        this.clear()
+        this.clear();
         document.getElementById("correct").style.display = "block";
         correctAudio.play();
     },
