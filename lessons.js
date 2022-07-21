@@ -1,3 +1,5 @@
+import { en } from "./english.js";
+import { tl } from "./tagalog.js"; 
 
 const randInt  = (n) => (Math.floor(n * Math.random()));
 

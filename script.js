@@ -1,4 +1,3 @@
-import { en } from "./english.js";
 import { lessonOne } from "./lessons.js";
 import { lessonTwo } from "./lessons.js";
 
@@ -56,15 +55,6 @@ const answer = {
     }
 }
 
-
-
-window.answer = answer;
-window.runSentence = runSentence; 
-window.checkLesson = checkLesson; 
-window.document.getElementById("giveUp").onclick = window.runSentence
-window.document.getElementById("done").onclick = checkLesson; 
-window.document.body.onload = window.runSentence(); 
-
 function tokenCheck(){
     const lessonQuery = new URLSearchParams(window.location.search);
     let lessonNumber = lessonQuery.get("lesson"); 
@@ -79,3 +69,13 @@ function tokenCheck(){
 }
 
 window.document.body.onload = tokenCheck; 
+window.document.body.onload = window.runSentence(); 
+window.document.body.onload = answer.correct(); 
+//onload events
+window.answer = answer;
+window.runSentence = runSentence; 
+window.checkLesson = checkLesson; 
+//global actions
+window.document.getElementById("giveUp").onclick = window.runSentence
+window.document.getElementById("done").onclick = checkLesson; 
+//clicks
