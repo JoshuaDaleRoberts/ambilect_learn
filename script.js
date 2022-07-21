@@ -21,16 +21,16 @@ function runSentence(){
 }
 
 function checkLesson(){
-    let a = document.getElementById("userAnswer").value; 
-    let b = window.tlPhrase; 
-    a = a.toLowerCase(); 
-    if (a == b) {
-        answer.correct(); 
-    } else if (normalize(a) == normalize(b)) {
-        answer.almost(); 
-    } else {
-        answer.wrong(); 
-    }
+let a = document.getElementById("userAnswer").value; 
+let b = window.tlPhrase; 
+a = a.toLowerCase(); 
+if (a == b) {
+    answer.correct(); 
+} else if (normalize(a) == normalize(b)) {
+    answer.almost(); 
+} else {
+    answer.wrong(); 
+}
 }
 
 const answer = {
@@ -69,13 +69,9 @@ function tokenCheck(){
 }
 
 window.document.body.onload = tokenCheck; 
-window.document.body.onload = window.runSentence(); 
-window.document.body.onload = answer.correct(); 
-//onload events
 window.answer = answer;
 window.runSentence = runSentence; 
 window.checkLesson = checkLesson; 
-//global actions
 window.document.getElementById("giveUp").onclick = window.runSentence
 window.document.getElementById("done").onclick = checkLesson; 
-//clicks
+window.document.body.onload = window.runSentence(); 
