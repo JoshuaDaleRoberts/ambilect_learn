@@ -70,9 +70,7 @@ const answer = {
 window.answer = answer;
 window.runSentence = runSentence; 
 window.checkLesson = checkLesson; 
-
 window.document.getElementById("giveUp").onclick = window.runSentence
 window.document.getElementById("done").onclick = checkLesson; 
-
 window.document.body.onload = window.runSentence(); 
 

@@ -36,7 +36,7 @@ h2 {
 a {
   font-size: 4vw; 
   border: 6px solid rgb(255, 192, 230); 
-  border-radius: 30px;
+  border-radius: 20px;
   text-align: center;
   display: inline-block;
 }
@@ -44,6 +44,7 @@ a {
 #main a {
   column-width: auto;
   height: 70px; 
+  height: 100%;
 }
 
 #main {
@@ -51,5 +52,7 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  height: 70vh;
+  height: 69vh;
+  column-gap: 10px;
+  row-gap: 20px;
 }
