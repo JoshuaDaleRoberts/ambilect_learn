@@ -69,24 +69,21 @@ function tokenCheck(){
     runSentence(); 
 }
 
-const accents = {
-    //á, à, â, é, è, ê, ë, í, ì, î, ó, ò, ô, ú, ù, û
-    //accents are taken with 
-    diacritics: ["á", "à", "â", "é", "è", "ê", "ë", "í", "ì", "î", "ó", "ò", "ô", "ú", "ù", "û"],
-    replaceMe: ["a'","a`","a^","e'","e`","e^",'e"',"i'","i`","i^","o'","o`","o^","u'","u`","u^"],
-    doAccents: function(){
-        let userInput = document.getElementById("userAnswer").innerHTML;
-        document.getElementById("forTesting").innerHTML = "weeho"
+function doAccents(){
+    const start = ["a'","a`","a^","e'","e`","e^",'e"',"i'","i`","i^","o'","o`","o^","u'","u`","u^"];
+    const end = ["á", "à", "â", "é", "è", "ê", "ë", "í", "ì", "î", "ó", "ò", "ô", "ú", "ù", "û"];
+    const answerArea = document.getElementById("userAnswer")
+    let userInput = answerArea.value
+    for (let i = 0; i < start.length; i++) {
+        userInput = userInput.replace(start[i],end[i])
     }
+    answerArea.value = userInput; 
+}   
 
-}
 
+document.getElementById("userAnswer").addEventListener('input', doAccents )
 window.document.body.onload = tokenCheck; 
-window.answer = answer;
-window.runSentence = runSentence; 
-window.checkLesson = checkLesson; 
-window.document.getElementById("giveUp").onclick = window.runSentence
+window.document.getElementById("giveUp").onclick = runSentence;
 window.document.getElementById("done").onclick = checkLesson; 
 window.document.body.onload = window.runSentence(); 
 window.document.body.onload = answer.wrong(); 
-window.document.getElementById("userAnswer").oninput = accents.doAccents(); 
