@@ -11,16 +11,22 @@ const capitalize = (a) => a.charAt(0).toUpperCase() + a.slice(1);
 const answerSpace = document.getElementById("answer")
 window.enPhrase = window.tlPhrase = ""
 
+var enPhrase = document.getElementById("enPhrase"); 
+var userAnswer = document.getElementById("userAnswer"); 
+
+
+
+
 function runSentence(){
     answer.clear(); 
     window.newSentence(); 
-    document.getElementById("enPhrase").innerHTML = capitalize(window.enPhrase); 
-    document.getElementById("userAnswer").value = ""
-    document.getElementById("userAnswer").value = capitalize(window.tlPhrase); 
+    enPhrase.innerHTML = capitalize(window.enPhrase); 
+    userAnswer.value = ""
+    userAnswer.value = capitalize(window.tlPhrase); 
 }
 
 function checkLesson(){
-    let a = document.getElementById("userAnswer").value; 
+    let a = userAnswer.value; 
     let b = window.tlPhrase; 
     a = a.toLowerCase(); 
     if (a == b) {
@@ -36,16 +42,17 @@ const answer = {
     wrong: function(){
         this.clear();
         document.getElementById("wrong").style.display = "block";
-        //wrongAudio.play(); 
+        // wrongAudio.play(); 
     },
     correct: function(){
         this.clear();
         document.getElementById("correct").style.display = "block";
-        //correctAudio.play();
+        // correctAudio.play();
     },
     almost: function(){
         this.clear()
         document.getElementById("almost").style.display = "block";
+        // wrongAudio.play(); 
     },
     clear: function(){
         document.getElementById("wrong").style.display = "none";
@@ -72,7 +79,7 @@ function tokenCheck(){
 function doAccents(){
     const start = ["a'","a`","a^","e'","e`","e^",'e"',"i'","i`","i^","o'","o`","o^","u'","u`","u^"];
     const end = ["á", "à", "â", "é", "è", "ê", "ë", "í", "ì", "î", "ó", "ò", "ô", "ú", "ù", "û"];
-    const answerArea = document.getElementById("userAnswer")
+    const answerArea = userAnswer; 
     let userInput = answerArea.value
     for (let i = 0; i < start.length; i++) {
         userInput = userInput.replace(start[i],end[i])
@@ -81,7 +88,7 @@ function doAccents(){
 }   
 
 
-document.getElementById("userAnswer").addEventListener('input', doAccents )
+userAnswer.addEventListener('input', doAccents)
 window.document.body.onload = tokenCheck; 
 window.document.getElementById("giveUp").onclick = runSentence;
 window.document.getElementById("done").onclick = checkLesson; 
