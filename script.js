@@ -8,14 +8,9 @@ const capitalize = (a) => a.charAt(0).toUpperCase() + a.slice(1);
 
 //window.newSentence = lessonOne; 
 
-const answerSpace = document.getElementById("answer")
-window.enPhrase = window.tlPhrase = ""
-
 var enPhrase = document.getElementById("enPhrase"); 
 var userAnswer = document.getElementById("userAnswer"); 
-
-
-
+window.enPhrase = window.tlPhrase = "";
 
 function runSentence(){
     answer.clear(); 
