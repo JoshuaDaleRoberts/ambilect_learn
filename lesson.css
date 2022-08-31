@@ -18,6 +18,17 @@ h2 {
   float: right;
 }
 
+#back{
+  color: black; 
+  background-color: white;
+  border: 2px solid black;
+  height: 30px; 
+  border-radius: 5px; 
+  text-decoration: none;
+  padding: 10px 20px; 
+  font-weight: 100;
+}
+
 #main {
   padding: 20px; 
 }
@@ -79,10 +90,6 @@ p {
 #controls {
   width: 30%
 }
-
-
-
-
 
 #wrong {
   background-color: red; 
