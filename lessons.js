@@ -1,5 +1,5 @@
 import { en } from "./english.js";
-import { fr } from "./french.js"; 
+import { ln } from "./lingala.js"; 
 
 const randInt  = (n) => (Math.floor(n * Math.random()));
 
