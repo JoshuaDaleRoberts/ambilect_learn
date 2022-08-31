@@ -10,19 +10,19 @@ const capitalize = (a) => a.charAt(0).toUpperCase() + a.slice(1);
 
 var enPhrase = document.getElementById("enPhrase"); 
 var userAnswer = document.getElementById("userAnswer"); 
-window.enPhrase = window.tlPhrase = "";
+window.enPhrase = window.lnPhrase = "";
 
 function runSentence(){
     answer.clear(); 
     window.newSentence(); 
     enPhrase.innerHTML = capitalize(window.enPhrase); 
     userAnswer.value = ""
-    userAnswer.value = capitalize(window.tlPhrase); 
+    userAnswer.value = capitalize(window.lnPhrase); 
 }
 
 function checkLesson(){
     let a = userAnswer.value; 
-    let b = window.tlPhrase; 
+    let b = window.lnPhrase; 
     a = a.toLowerCase(); 
     if (a == b) {
         answer.correct(); 

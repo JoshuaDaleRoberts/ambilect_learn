@@ -1,6 +1,18 @@
 export const ln = {
   v: function(verb, tense, subj) {
     // 0 - past, 1 - present, 2 - future, 3 - imperative
+   
+    if (typeof(subj) === "string"){
+      switch(subj){
+        case "ngai": subj = 0; break;
+        case "yo" : subj = 1; break; 
+        case "ye" : subj = 2; break;
+        case "biso" : subj = 3; break; 
+        case "bino" : subj = 4; break;
+        case "bango" : subj = 5; break; 
+        default: subj = 6; 
+      }
+    } 
     let normal = (verb.slice(0, 2) === "ko") && (verb.slice(-1) === "a");
     if (!normal) { return "error: invalid verb" };
     if (subj > 7 || subj < 0) { return "error: invalid subject" };

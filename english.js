@@ -3,6 +3,18 @@ export const en = {
     /* verb is the verb in question, string
     tense :    0 = present, 1 = present progressive, 2 = future(will), 3 = past (ed), 4 = past participle has (ed) , 5 = past progressive
     subject:   0 = I, 1 = you, 2 = he, 3 = we, 4 = you all, 5 = they */
+    if (typeof(subj) === "string"){
+      switch(subj){
+        case "I": subj = 0; break;
+        case "you": subj = 1; break;
+        case "he":
+        case "she": subj = 2; break;
+        case "we": subj = 3; break;
+        case "you all": subj = 4; break;
+        case "they": subj = 5; break;
+        default: subj = 2; 
+      }
+    }
     let finalVerb = ""; let objMark = "";
     const vowels = ["a", "i", "o", "u"];
     const irregularVerbs = [
