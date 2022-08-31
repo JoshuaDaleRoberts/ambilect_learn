@@ -22,11 +22,13 @@ export function lessonTwo(){
 export function lessonThree(){
   const en1 = ['be','have','want','make','buy','think','speak','know','be able','have to'];
   const ln1 = ['kozala','kozala na','kolinga','kosala','kosomba','kokanisa','koloba','koyeba','kokoka','kosengela']; 
-  const en2 = ['I','you','he','she','we','you all','they']
+  const en2 = ['I','you','he','she','we','you all','they'];
   const ln2 = ['ngai','yo','ye','ye','biso','bino','bango',]
 
   let r1 = randInt(en1.length); 
-  let r2 = randInt[en2.length];
-  window.enPhrase = en.v(en1[r1], 0, en2[r2]);
+  let r2 = randInt(en2.length);
+
+ 
+  window.enPhrase = en2[r2] + " " + en.v(en1[r1], 0, en2[r2]);
   window.lnPhrase = ln.v(ln1[r1], 0, ln2[r2]);
 }

@@ -1,7 +1,14 @@
 export const ln = {
   v: function(verb, tense, subj) {
+    let finalVerb = ""; let objMark = ""; 
+    if (verb.includes(" ")) {
+      let spPos = verb.indexOf(" ")
+      objMark = verb.substring(spPos, verb.length);
+      finalVerb = verb.substring(0, spPos);
+    } else {
+      finalVerb = verb
+    }
     // 0 - past, 1 - present, 2 - future, 3 - imperative
-   
     if (typeof(subj) === "string"){
       switch(subj){
         case "ngai": subj = 0; break;
@@ -13,18 +20,21 @@ export const ln = {
         default: subj = 6; 
       }
     } 
-    let normal = (verb.slice(0, 2) === "ko") && (verb.slice(-1) === "a");
-    if (!normal) { return "error: invalid verb" };
+
+
+    let normal = (finalVerb.slice(0, 2) === "ko") && (finalVerb.slice(-1) === "a");
+    if (!normal) { return  `Error: finalverb was ${finalVerb}` };
     if (subj > 7 || subj < 0) { return "error: invalid subject" };
     const prefixes = ["na", "o", "a", "to", "bo", "ba", "e"]
     let prefix = prefixes[subj]; 
     switch (tense){
-      case 0: return prefix + verb.slice(2, -1) + "i"; break;
-      case 1: return prefix + verb.slice(2)+ "ki";     break;
-      case 2: return prefix + verb;                    break;
-      case 3: return verb.slice(2); break; 
-      default: return "Error: invalid text";
+      case 0: finalVerb = prefix + finalVerb.slice(2, -1) + "i"; break;
+      case 1: finalVerb =  prefix + finalVerb.slice(2)+ "ki";     break;
+      case 2: finalVerb = prefix + finalVerb;                    break;
+      case 3: finalVerb =  finalVerb.slice(2); break; 
+      default: finalVerb =  "Error: invalid text";
     }
+    return finalVerb + objMark;
   },
   ps: function(word){ return "na " + word},
   pn: function(person, number, animacy){
