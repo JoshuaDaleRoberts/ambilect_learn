@@ -86,9 +86,11 @@ function doAccents(){
 }   
 
 userAnswer.addEventListener('input', doAccents)
-window.document.body.onload = tokenCheck; 
-window.document.getElementById("giveUp").onclick = runSentence;
+document.body.onload = tokenCheck; 
+document.getElementById("giveUp").onclick = runSentence;
 
-window.document.getElementById("done").onclick = checkLesson; 
-window.document.body.onload = tokenCheck(); 
+document.getElementById("done").onclick = checkLesson; 
+document.body.onload = tokenCheck(); 
+
+
 // window.document.body.onload = answer.wrong(); 
