@@ -85,6 +85,10 @@ function doAccents(){
     answerArea.value = userInput; 
 }   
 
+function revealAnswer(){
+    
+}
+
 userAnswer.addEventListener('input', doAccents)
 document.body.onload = tokenCheck; 
 document.getElementById("giveUp").onclick = runSentence;
@@ -92,5 +96,14 @@ document.getElementById("giveUp").onclick = runSentence;
 document.getElementById("done").onclick = checkLesson; 
 document.body.onload = tokenCheck(); 
 
+document.getElementById("wrongContinue").addEventListener("click", runSentence);
+document.getElementById("correctContinue").addEventListener("click", runSentence);
+document.getElementById("almostContinue").addEventListener("click", runSentence);
+document.getElementById("wrongTry").addEventListener("click", checkLesson);
+document.getElementById("almostTry").addEventListener("click", checkLesson);
+//document.getElementById("wrongReveal").addEventListener("click", );
+//document.getElementById("almostReveal").addEventListener("click", );
 
-// window.document.body.onload = answer.wrong(); 
+
+
+window.document.body.onload = answer.wrong(); 
