@@ -203,11 +203,18 @@ export const en = {
     }
     return finalNoun
   },
-  pos: function(noun) {
+  ps: function(noun) {
     let final = noun + "'s";
-    let last = noun.charAt(noun.length-1); 
+    let last = noun.charAt(noun.length - 1); 
     if (last =="s" || last == "x") {
       final = noun + "'";
+    }
+    const special = ['I','you','he','she','we','you all','they'];
+    const relation = ['my','your','his','her','our',"y'all's",'their',]
+
+    if (special.includes(noun)){
+      let nIndex = special.indexOf(noun)
+      final = relation[nIndex];
     }
     return final;
   }

@@ -1,4 +1,4 @@
-import { lessonOne, lessonTwo, lessonThree } from "./lessons.js";
+import { lessonOne, lessonTwo, lessonThree, lessonFour, lessonFive } from "./lessons.js";
 
 var correctAudio = new Audio('correct.mp3');
 var wrongAudio = new Audio('wrong.mp3');
@@ -24,6 +24,7 @@ function checkLesson(){
     let a = userAnswer.value; 
     let b = window.lnPhrase; 
     a = a.toLowerCase(); 
+    b = b.toLowerCase();
     if (a == b) {
         answer.correct(); 
     } else if (normalize(a) == normalize(b)) {
@@ -66,6 +67,10 @@ function tokenCheck(){
         break;
         case "3": window.newSentence = lessonThree; 
         break; 
+        case "4": window.newSentence = lessonFour;
+        break;
+        case "5": window.newSentence = lessonFive;
+        break;
         default: window.newSentence = lessonOne
     } 
     runSentence(); 
