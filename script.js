@@ -6,8 +6,6 @@ var wrongAudio = new Audio('wrong.mp3');
 const normalize = (a) => a.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
 const capitalize = (a) => a.charAt(0).toUpperCase() + a.slice(1);
 
-//window.newSentence = lessonOne; 
-
 var enPhrase = document.getElementById("enPhrase"); 
 var userAnswer = document.getElementById("userAnswer"); 
 window.enPhrase = window.lnPhrase = "";
