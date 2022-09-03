@@ -85,10 +85,10 @@ function doAccents(){
     answerArea.value = userInput; 
 }   
 
-
 userAnswer.addEventListener('input', doAccents)
 window.document.body.onload = tokenCheck; 
 window.document.getElementById("giveUp").onclick = runSentence;
+
 window.document.getElementById("done").onclick = checkLesson; 
-window.document.body.onload = window.runSentence(); 
-window.document.body.onload = answer.wrong(); 
+window.document.body.onload = tokenCheck(); 
+// window.document.body.onload = answer.wrong(); 
