@@ -115,7 +115,7 @@ p {
 }
 
 .right {
-  float:right; 
+  margin-left: 50%;
 }
 
 .right > p {

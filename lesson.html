@@ -44,8 +44,8 @@
         <div class="right">
           <br>
           <span>Number of tries left:</span>
-          <span>5</span>
-          <p>Test Answer of five or so words</p>
+          <span id="wrongTryNumber"></span>
+          <p id = "wrongRevealSpot">Test Answer of five or so words</p>
         </div>
 
 
@@ -57,11 +57,19 @@
         <input type='button' value='New Sentence' id="correctContinue" class="answerButton">
       </div>
       <div id="almost" class="answer">
-        <p>Check your accent marks and try again!</p> 
-        <br> 
-        <input type='button' value='Try Again'      class="answerButton" id="almostTry">
-        <input type='button' value='Reveal Answer'  class="answerButton" id="almostReveal">
-        <input type='button' value='Move on'        class="answerButton" id="almostContinue">
+        <div class="left">
+          <p>Check your accents!</p> 
+          <br> 
+          <input type='button' value='Try Again'      class="answerButton" id="almostTry">
+          <input type='button' value='Reveal Answer'  class="answerButton" id="almostReveal">
+          <input type='button' value='Move on'        class="answerButton" id="almostContinue">
+        </div>
+        <div class="right">
+          <br>
+          <span>Number of tries left:</span>
+          <span id="almostTryNumber"></span>
+          <p id = "almostRevealSpot"></p>
+        </div>
       </div>
   </div>
   
