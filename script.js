@@ -93,6 +93,7 @@ const answer = {
         } else if (answerState == "almost") {
             document.getElementById("almostRevealSpot").innerHTML = capitalize(answer)
         }
+        canTry = false; 
     },
     unreveal: function(){
         document.getElementById("wrongRevealSpot").innerHTML = ""
