@@ -54,3 +54,12 @@ a {
   text-decoration: underline;
   font-size: 15px; 
 }
+
+#footer a {
+  color: white;
+  border: 0px; 
+  font-size: 15px; 
+  text-align: left;
+  display: block;
+  text-decoration: underline;
+}
