@@ -19,7 +19,7 @@ function runSentence(){
     window.newSentence(); 
     enPhrase.innerHTML = capitalize(window.enPhrase); 
     userAnswer.value = ""
-    userAnswer.value = capitalize(window.lnPhrase); 
+    //userAnswer.value = capitalize(window.lnPhrase); 
     triesLeft = 6;
     canTry = true;
 }
@@ -53,7 +53,7 @@ const answer = {
                 this.reveal()
                 canTry = false; 
             }
-            // wrongAudio.play(); 
+            //wrongAudio.play(); 
         }
     },
     correct: function(){
@@ -61,7 +61,7 @@ const answer = {
             answerState = "correct"
             this.clear();
             document.getElementById("correct").style.display = "block";
-            // correctAudio.play();
+            //correctAudio.play();
         }
     },
     almost: function(){
@@ -78,7 +78,7 @@ const answer = {
                 this.reveal()
                 canTry = false; 
             }
-            // wrongAudio.play(); 
+           // wrongAudio.play(); 
         }
     },
     clear: function(){
