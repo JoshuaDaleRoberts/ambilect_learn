@@ -37,7 +37,6 @@ export function lessonFour(){
   const en1 = ['ladder','basket','door','clock','trash can','key','toilet','chair','broom','kitchen','window','bed','table','rope','bottle','house','soap','room','mirror'];
   const ln1 = ['ebuteli','ekolo','ekuke','epimolo ya sa','fulu','fungola','kabine','kiti','kombo','kuku','lininisi','mbeto','mesa','mokulu','molangi','ndako','sabuni','suku','talatala'];
   let r1 = randInt(en1.length); 
-
   window.enPhrase = en1[r1];
   window.lnPhrase = ln1[r1]; 
 }
@@ -49,7 +48,6 @@ export function lessonFive(){
   const ln2 = ['ngai','yo','ye','ye','biso','bino','bango','Nsaku','Yudi','Mboya','Mona','Ana','Kabu'];
   let r1 = randInt(en1.length);
   let r2 = randInt(en2.length);   
-    window.enPhrase = en.ps(en2[r2]) + " " + en1[r1]; 
-    window.lnPhrase = ln1[r1] + " " + ln.ps(ln2[r2]);
-  
+  window.enPhrase = en.ps(en2[r2]) + " " + en1[r1]; 
+  window.lnPhrase = ln1[r1] + " " + ln.ps(ln2[r2]);
 }
