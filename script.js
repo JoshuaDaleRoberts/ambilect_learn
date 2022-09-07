@@ -22,6 +22,7 @@ function runSentence(){
     //userAnswer.value = capitalize(window.lnPhrase); 
     triesLeft = 6;
     canTry = true;
+    answer.unreveal();
 }
 
 function checkLesson(){
